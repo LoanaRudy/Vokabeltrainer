@@ -18,7 +18,7 @@
         if(password_verify($_POST["pw"], $row["PASSWORD"])){
           session_start();
           $_SESSION["username"] = $row["USERNAME"];
-          header("Location: vokabel.php");
+          header("Location: startseite.php");
         } else {
           echo "Der Login ist fehlgeschlagen";
         }

@@ -1,56 +1,49 @@
 <?php
-session_start();  // Sitzung fortsetzen
+session_start();
+if (!isset($_SESSION["username"])) {
+    header("Location: index.php");
+    exit;
+}
 
 // Datenbankverbindung einbinden
 require_once('mysql-vokabel.php');
 
-// Falls keine Vokabel in der Sitzung gespeichert ist, zurück zur Startseite
+// Eine zufällige Vokabel aus der Datenbank abrufen
 if (!isset($_SESSION['vokabel'])) {
-    header("Location: startseite.php");
-    exit();
-}
-
-// Vokabel aus der Sitzung holen
-$vokabel = $_SESSION['vokabel'];
-$punkte = $_SESSION['punkte'];
-
-// Wenn der Benutzer eine Antwort eingibt
-if (isset($_POST['antwort'])) {
-    $antwort = trim($_POST['antwort']);  // Antwort trimmen (Leerzeichen entfernen)
-    if (strtolower($antwort) == strtolower($vokabel['englisches_Wort'])) {
-        $_SESSION['punkte']++;  // Punkte erhöhen, wenn die Antwort richtig ist
-        $feedback = "Richtig!";
-    } else {
-        $feedback = "Falsch! Die richtige Antwort war: " . $vokabel['englisches_Wort'];
-    }
-
-    // Neue Vokabel für die nächste Frage abrufen
     $stmt = $mysql->query("SELECT * FROM Vokabeln ORDER BY RAND() LIMIT 1");
     $vokabel = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    // Vokabel in der Sitzung speichern
+    
+    // Vokabel in der Session speichern, damit die gleiche Vokabel bei der Antwort überprüft wird
     $_SESSION['vokabel'] = $vokabel;
 }
 
+$vokabel = $_SESSION['vokabel'];
 ?>
 
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Vokabeltest - Frage</title>
+    <title>Vokabeltest</title>
 </head>
 <body>
-    <h1>Übersetze ins Englische:</h1>
-    <p><?php echo htmlspecialchars($vokabel['deutsches_Wort']); ?></p>
+    <h1>Vokabeltest</h1>
 
-    <?php if (isset($feedback)) { echo "<p>$feedback</p>"; } ?>
+    <!-- Aufgabenstellung -->
+    <p>Übersetze folgendes Wort ins Englische:</p>
+    <h3><?php echo htmlspecialchars($vokabel['deutsches_Wort']); // Zeige die deutsche Vokabel an ?></h3>
 
-    <form method="POST">
-        <input type="text" name="antwort" required>
-        <button type="submit">Antwort überprüfen</button>
+    <!-- Formular für die Eingabe der Übersetzung -->
+    <form method="POST" action="ergebnis.php">
+        <label for="antwort">Deine Übersetzung:</label>
+        <input type="text" name="antwort" id="antwort" required>
+        <button type="submit">Antwort einreichen</button>
     </form>
 
-    <p>Du hast bisher <?php echo $punkte; ?> Punkte.</p>
+    <!-- Button für Test abbrechen -->
+    <form method="POST" action="startseite.php">
+        <button type="submit" name="abbrechen">Test abbrechen</button>
+    </form>
 </body>
 </html>
+
