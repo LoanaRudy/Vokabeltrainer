@@ -101,8 +101,8 @@ if (isset($_POST['start_test'])) {
                 <button type="submit" class="btn btn-lila">Vokabeln hinzufügen</button>
             </form>
 
-            <!-- Button zum Vokabeln anzeigen -->
-            <form method="GET" action="vokabeln_anzeigen.php">
+            <!-- Button zum Vokabeln verwalten -->
+            <form method="GET" action="vokabeln-verwalten.php">
                 <button type="submit" class="btn btn-lila">Vokabeln verwalten</button>
             </form>
         </div>

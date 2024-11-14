@@ -56,6 +56,19 @@ if (isset($_POST['submit'])) {
         .btn-lila:hover {
             background-color: #C18ED3;
         }
+        .btn-secondary {
+            background-color: #d3d3d3;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            flex: 1;
+        }
+        .btn-secondary:hover {
+            background-color: #b0b0b0; /* Etwas dunkleres Grau beim Hover */
+            color: black; /* Schwarze Schrift bleibt beim Hover */
+        }
         .container {
             display: flex;
             justify-content: center;
@@ -106,7 +119,7 @@ if (isset($_POST['submit'])) {
 
             <div class="button-container">
                 <button type="submit" name="submit" class="btn btn-lila">Vokabel hinzufügen</button>
-                <a href="startseite.php" class="btn btn-lila">Zurück zur Startseite</a>
+                <a href="startseite.php" class="btn btn-secondary">Zurück zur Startseite</a>
             </div>
         </form>
     </div>
@@ -114,6 +127,7 @@ if (isset($_POST['submit'])) {
 
 </body>
 </html>
+
 
 
 
