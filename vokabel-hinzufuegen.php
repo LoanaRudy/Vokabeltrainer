@@ -14,7 +14,6 @@ if (!isset($_SESSION["username"])) {
 
 // Prüfen, ob das Formular zum Hinzufügen einer Vokabel abgeschickt wurde
 if (isset($_POST['submit'])) {
-    // Verbindung zur Datenbank herstellen
     require_once('mysql-vokabel.php');
 
     // Vokabeln aus dem Formular holen
@@ -22,7 +21,6 @@ if (isset($_POST['submit'])) {
     $englisches_wort = $_POST['englisches_wort'];
 
     if (!empty($deutsches_wort) && !empty($englisches_wort)) {
-        // SQL-Query zum Einfügen der neuen Vokabel
         $stmt = $mysql->prepare("INSERT INTO Vokabeln (deutsches_Wort, englisches_Wort) VALUES (:deutsch, :englisch)");
         $stmt->execute([
             ':deutsch' => $deutsches_wort,
@@ -46,15 +44,16 @@ if (isset($_POST['submit'])) {
     <title>Vokabel Hinzufügen</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .btn-primary {
-            background-color: #D8A7E4; 
+        .btn-lila {
+            background-color: #D8A7E4;
             color: black;
             border: none;
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
+            flex: 1;
         }
-        .btn-primary:hover {
+        .btn-lila:hover {
             background-color: #C18ED3;
         }
         .container {
@@ -76,13 +75,18 @@ if (isset($_POST['submit'])) {
             color: black;
             text-align: center;
         }
+        .button-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body class="bg-light">
 
 <div class="container">
     <div class="form-container">
-        <h1>Neue Vokabel hinzufügen</h1>
+        <h2>Neue Vokabel hinzufügen</h2>
 
         <?php if (isset($message)): ?>
             <div class="alert <?php echo $message_class; ?> mt-3"><?php echo $message; ?></div>
@@ -100,14 +104,16 @@ if (isset($_POST['submit'])) {
                 <input type="text" class="form-control" id="englisches_wort" name="englisches_wort" required>
             </div>
 
-            <button type="submit" name="submit" class="btn btn-primary">Vokabel hinzufügen</button>
+            <div class="button-container">
+                <button type="submit" name="submit" class="btn btn-lila">Vokabel hinzufügen</button>
+                <a href="startseite.php" class="btn btn-lila">Zurück zur Startseite</a>
+            </div>
         </form>
-
-        <!-- Link zurück zur Startseite -->
-        <a href="startseite.php" class="btn btn-secondary mt-3">Zurück zur Startseite</a>
     </div>
 </div>
 
 </body>
 </html>
+
+
 

@@ -49,56 +49,70 @@ if (isset($_POST['start_test'])) {
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
+            flex: 1;
         }
         .btn-lila:hover {
             background-color: #C18ED3;
         }
-        .flex-container {
+        .container {
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .form-container {
+            width: 100%;
+            max-width: 600px; /* Breiterer Container */
+            padding: 30px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            text-align: center;
         }
         .button-container {
             display: flex;
             gap: 15px;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 25px;
         }
-        h1, h2 {
+        h1, h2, p {
             color: black;
-            text-align: center;
         }
     </style>
 </head>
 <body class="bg-light">
 
-<div class="flex-container">
-    <h1>Herzlich Willkommen in deinem Vokabeltrainer!</h1>
-    <h2>Teste jetzt deine Englischkenntnisse</h2>
-    <p>Wähle eine Option, um fortzufahren...</p>
+<div class="container">
+    <div class="form-container">
+        <h1>Herzlich Willkommen in deinem Vokabeltrainer!</h1>
+        <p></p>
+        <h2>Teste jetzt deine Englischkenntnisse</h2>
+        <p>Wähle eine Option, um fortzufahren...</p>
 
-    <div class="button-container">
-        <!-- Button zum Test starten -->
-        <form method="POST">
-            <button type="submit" name="start_test" class="btn btn-lila">Test starten</button>
-        </form>
+        <div class="button-container">
+            <!-- Button zum Test starten -->
+            <form method="POST">
+                <button type="submit" name="start_test" class="btn btn-lila">Test starten</button>
+            </form>
 
-        <!-- Button zum Vokabeln hinzufügen -->
-        <form method="GET" action="vokabel-hinzufuegen.php">
-            <button type="submit" class="btn btn-lila">Vokabeln hinzufügen</button>
-        </form>
+            <!-- Button zum Vokabeln hinzufügen -->
+            <form method="GET" action="vokabel-hinzufuegen.php">
+                <button type="submit" class="btn btn-lila">Vokabeln hinzufügen</button>
+            </form>
 
-        <!-- Button zum Vokabeln anzeigen -->
-        <form method="GET" action="vokabeln_anzeigen.php">
-            <button type="submit" class="btn btn-lila">Vokabeln anzeigen</button>
-        </form>
+            <!-- Button zum Vokabeln anzeigen -->
+            <form method="GET" action="vokabeln_anzeigen.php">
+                <button type="submit" class="btn btn-lila">Vokabeln verwalten</button>
+            </form>
+        </div>
     </div>
 </div>
 
 </body>
 </html>
+
+
 
 
 
