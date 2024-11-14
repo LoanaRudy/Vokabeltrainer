@@ -11,6 +11,13 @@ if (!isset($_SESSION["username"])) {
     exit;
 }
 
+// Logout-Logik: Wenn der Logout-Button geklickt wird, Sitzung beenden und zur Login-Seite weiterleiten
+if (isset($_POST['logout'])) {
+    session_destroy();
+    header("Location: index.php");
+    exit();
+}
+
 // Wenn der Button "Test starten" geklickt wurde, die Session-Variablen setzen und zu test.php weiterleiten
 if (isset($_POST['start_test'])) {
     try {
@@ -54,6 +61,24 @@ if (isset($_POST['start_test'])) {
         .btn-lila:hover {
             background-color: #C18ED3;
         }
+        .btn-logout {
+            background-color: #f8f9fa;
+            color: black;
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            border-radius: 5px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        .btn-logout:hover {
+            background-color: #e0e0e0;
+            color: black;
+            border-color: #bbb;
+        }
         .container {
             display: flex;
             justify-content: center;
@@ -63,12 +88,13 @@ if (isset($_POST['start_test'])) {
         }
         .form-container {
             width: 100%;
-            max-width: 600px; /* Breiterer Container */
+            max-width: 600px; 
             padding: 30px;
             border: 1px solid #ccc;
             border-radius: 8px;
             background-color: #fff;
             text-align: center;
+            position: relative;
         }
         .button-container {
             display: flex;
@@ -85,8 +111,12 @@ if (isset($_POST['start_test'])) {
 
 <div class="container">
     <div class="form-container">
+        <!-- Logout-Button in der linken oberen Ecke -->
+        <form method="POST">
+            <button type="submit" name="logout" class="btn-logout">Logout</button>
+        </form>
+
         <h1>Herzlich Willkommen in deinem Vokabeltrainer!</h1>
-        <p></p>
         <h2>Teste jetzt deine Englischkenntnisse</h2>
         <p>Wähle eine Option, um fortzufahren...</p>
 
@@ -111,8 +141,6 @@ if (isset($_POST['start_test'])) {
 
 </body>
 </html>
-
-
 
 
 

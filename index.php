@@ -6,9 +6,8 @@
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Custom Styles */
         .btn-lila {
-            background-color: #D8A7E4; /* Helllila */
+            background-color: #D8A7E4;
             color: black;
             border: none;
             padding: 10px 20px;
@@ -16,7 +15,7 @@
             cursor: pointer;
         }
         .btn-lila:hover {
-            background-color: #C18ED3; /* Etwas dunkleres Lila */
+            background-color: #C18ED3;
         }
         .container {
             display: flex;
@@ -50,14 +49,16 @@
 <div class="container">
     <div class="form-container">
         <?php
+        $error_message = ""; // Initialisiere die Fehlermeldung als leer
+
         if (isset($_POST["submit"])) {
             require("mysql.php");
-            $stmt = $mysql->prepare("SELECT * FROM accounts WHERE USERNAME = :user"); //Username überprüfen
+            $stmt = $mysql->prepare("SELECT * FROM accounts WHERE USERNAME = :user");
             $stmt->bindParam(":user", $_POST["username"]);
             $stmt->execute();
             $count = $stmt->rowCount();
+
             if ($count == 1) {
-                //Username ist frei
                 $row = $stmt->fetch();
                 if (password_verify($_POST["pw"], $row["PASSWORD"])) {
                     session_start();
@@ -65,10 +66,10 @@
                     header("Location: startseite.php");
                     exit();
                 } else {
-                    echo '<div class="alert alert-danger text-center">Der Login ist fehlgeschlagen.</div>';
+                    $error_message = "Der Login ist fehlgeschlagen.";
                 }
             } else {
-                echo '<div class="alert alert-danger text-center">Der Login ist fehlgeschlagen.</div>';
+                $error_message = "Der Login ist fehlgeschlagen.";
             }
         }
         ?>
@@ -79,6 +80,12 @@
         <form action="index.php" method="post">
             <input type="text" name="username" class="form-control" placeholder="Username" required>
             <input type="password" name="pw" class="form-control" placeholder="Passwort" required>
+
+            <!-- Fehlermeldung unter dem Passwort-Eingabefeld -->
+            <?php if (!empty($error_message)): ?>
+                <div class="alert alert-danger mt-2"><?php echo $error_message; ?></div>
+            <?php endif; ?>
+
             <button type="submit" name="submit" class="btn btn-lila w-100">Einloggen</button>
         </form>
 
@@ -91,3 +98,4 @@
 
 </body>
 </html>
+
