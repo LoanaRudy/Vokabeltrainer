@@ -70,7 +70,10 @@ unset($_SESSION['score']);
                 <button type="submit" class="btn btn-lila btn-lg">Zurück zur Startseite</button>
             </form>
 
+            <!-- Button zum Wiederholen des Tests -->
             <form method="POST" action="test.php">
+                <!-- Neue Logik: den Test-Status explizit zurücksetzen -->
+                <input type="hidden" name="restart_test" value="1">
                 <button type="submit" class="btn btn-lila btn-lg">Test wiederholen</button>
             </form>
         </div>

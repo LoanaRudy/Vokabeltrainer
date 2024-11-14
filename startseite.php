@@ -11,10 +11,10 @@ if (!isset($_SESSION["username"])) {
     exit;
 }
 
-// Wenn der Button "Test starten" geklickt wurde, die Session-Variablen setzen
+// Wenn der Button "Test starten" geklickt wurde, die Session-Variablen setzen und zu test.php weiterleiten
 if (isset($_POST['start_test'])) {
     try {
-        require_once('mysql-vokabel.php');  // DB-Verbindung herstellen
+        require_once(__DIR__ . '/mysql-vokabel.php');  // DB-Verbindung herstellen
         $stmt = $mysql->query("SELECT * FROM Vokabeln");
         if ($stmt) {
             $_SESSION['vokabeln'] = $stmt->fetchAll(PDO::FETCH_ASSOC);  // Alle Vokabeln in der Session speichern
@@ -42,9 +42,8 @@ if (isset($_POST['start_test'])) {
     <title>Vokabeltrainer</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Custom Styles */
         .btn-lila {
-            background-color: #D8A7E4; /* Helllila */
+            background-color: #D8A7E4;
             color: black;
             border: none;
             padding: 10px 20px;
@@ -52,7 +51,7 @@ if (isset($_POST['start_test'])) {
             cursor: pointer;
         }
         .btn-lila:hover {
-            background-color: #C18ED3; /* Etwas dunkleres Lila */
+            background-color: #C18ED3;
         }
         .flex-container {
             display: flex;
@@ -63,13 +62,13 @@ if (isset($_POST['start_test'])) {
         }
         .button-container {
             display: flex;
-            gap: 15px; /* Geringerer Abstand zwischen den Buttons */
+            gap: 15px;
             justify-content: center;
             margin-top: 20px;
         }
         h1, h2 {
-            color: black; /* Schwarze Schriftfarbe */
-            text-align: center; /* Text zentrieren */
+            color: black;
+            text-align: center;
         }
     </style>
 </head>
@@ -87,17 +86,21 @@ if (isset($_POST['start_test'])) {
         </form>
 
         <!-- Button zum Vokabeln hinzufügen -->
-        <form method="POST">
-            <button type="submit" name="vokabeln_hinzufuegen" class="btn btn-lila">Vokabeln hinzufügen</button>
+        <form method="GET" action="vokabel-hinzufuegen.php">
+            <button type="submit" class="btn btn-lila">Vokabeln hinzufügen</button>
         </form>
 
         <!-- Button zum Vokabeln anzeigen -->
-        <form method="POST">
-            <button type="submit" name="vokabeln_anzeigen" class="btn btn-lila">Vokabeln anzeigen</button>
+        <form method="GET" action="vokabeln_anzeigen.php">
+            <button type="submit" class="btn btn-lila">Vokabeln anzeigen</button>
         </form>
     </div>
-
 </div>
 
 </body>
 </html>
+
+
+
+
+
