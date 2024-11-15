@@ -37,44 +37,51 @@ unset($_SESSION['score']);
         .btn-lila:hover {
             background-color: #C18ED3; /* Etwas dunkleres Lila */
         }
-        .flex-container {
+        .container {
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .form-container {
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            text-align: center;
         }
         h1, h2, p {
             color: black;
-            text-align: center; /* Zentriert den Text */
         }
         .button-container {
             display: flex;
             gap: 15px;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 25px;
         }
     </style>
 </head>
 <body class="bg-light">
 
-<div class="container mt-5">
-    <div class="flex-container">
-        <h3>Herzlichen Glückwunsch!</h3>
+<div class="container">
+    <div class="form-container">
+        <h1>Herzlichen Glückwunsch!</h1>
         <p>Du hast den Test beendet.</p>
-        <p>Deine Punktzahl: <?php echo $score; ?> von <?php echo $total_questions; ?></p>
+        <h2>Deine Punktzahl:</h2>
+        <p><?php echo $score; ?> von <?php echo $total_questions; ?></p>
 
         <!-- Buttons: Zurück zur Startseite und Test wiederholen -->
         <div class="button-container">
             <form method="POST" action="startseite.php">
-                <button type="submit" class="btn btn-lila btn-lg">Zurück zur Startseite</button>
+                <button type="submit" class="btn btn-lila">Zurück zur Startseite</button>
             </form>
 
-            <!-- Button zum Wiederholen des Tests -->
             <form method="POST" action="test.php">
-                <!-- Neue Logik: den Test-Status explizit zurücksetzen -->
                 <input type="hidden" name="restart_test" value="1">
-                <button type="submit" class="btn btn-lila btn-lg">Test wiederholen</button>
+                <button type="submit" class="btn btn-lila">Test wiederholen</button>
             </form>
         </div>
     </div>
@@ -82,3 +89,4 @@ unset($_SESSION['score']);
 
 </body>
 </html>
+
