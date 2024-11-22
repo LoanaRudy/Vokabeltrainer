@@ -48,64 +48,7 @@ if (isset($_POST['start_test'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vokabeltrainer</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .btn-lila {
-            background-color: #D8A7E4;
-            color: black;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            flex: 1;
-        }
-        .btn-lila:hover {
-            background-color: #C18ED3;
-        }
-        .btn-logout {
-            background-color: #f8f9fa;
-            color: black;
-            border: 1px solid #ccc;
-            padding: 5px 10px;
-            font-size: 14px;
-            cursor: pointer;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            border-radius: 5px;
-            transition: background-color 0.2s, color 0.2s;
-        }
-        .btn-logout:hover {
-            background-color: #e0e0e0;
-            color: black;
-            border-color: #bbb;
-        }
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .form-container {
-            width: 100%;
-            max-width: 600px; 
-            padding: 30px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            background-color: #fff;
-            text-align: center;
-            position: relative;
-        }
-        .button-container {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 25px;
-        }
-        h1, h2, p {
-            color: black;
-        }
-    </style>
+    <link rel="stylesheet" href="startseite.css">
 </head>
 <body class="bg-light">
 
@@ -141,6 +84,7 @@ if (isset($_POST['start_test'])) {
 
 </body>
 </html>
+
 
 
 

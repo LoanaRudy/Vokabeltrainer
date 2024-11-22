@@ -35,69 +35,7 @@ $vokabeln = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>Vokabeln verwalten</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"> <!-- Bootstrap Icons -->
-    <style>
-        .btn-lila {
-            background-color: #D8A7E4;
-            color: black;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            flex: 1;
-        }
-        .btn-lila:hover {
-            background-color: #C18ED3;
-        }
-        /* Stil für den Zurück-Button */
-        .btn-secondary {
-            background-color: #d3d3d3;
-            color: black;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            flex: 1;
-        }
-        .btn-secondary:hover {
-            background-color: #b0b0b0; /* Etwas dunkleres Grau beim Hover */
-            color: black; /* Schwarze Schrift bleibt beim Hover */
-        }
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .table-container {
-            width: 100%;
-            max-width: 800px;
-            padding: 30px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            background-color: #fff;
-        }
-        .button-container {
-            display: flex;
-            gap: 15px;
-            justify-content: flex-end;
-            margin-top: 20px;
-        }
-        h1, h2 {
-            color: black;
-            text-align: center;
-        }
-        /* Stil für das Mülleimer-Icon */
-        .delete-icon {
-            color: gray;
-            font-size: 20px;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .delete-icon:hover {
-            color: #dc3545; /* Rot bei Hover */
-        }
-    </style>
+    <link rel="stylesheet" href="vokabel-verwalten.css"> <!-- Externe CSS-Datei -->
 </head>
 <body class="bg-light">
 

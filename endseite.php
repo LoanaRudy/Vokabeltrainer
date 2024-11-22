@@ -25,44 +25,7 @@ unset($_SESSION['score']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test abgeschlossen</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .btn-lila {
-            background-color: #D8A7E4; /* Helllila */
-            color: black;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .btn-lila:hover {
-            background-color: #C18ED3; /* Etwas dunkleres Lila */
-        }
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .form-container {
-            width: 100%;
-            max-width: 600px;
-            padding: 30px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            background-color: #fff;
-            text-align: center;
-        }
-        h1, h2, p {
-            color: black;
-        }
-        .button-container {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 25px;
-        }
-    </style>
+    <link rel="stylesheet" href="endseite.css">
 </head>
 <body class="bg-light">
 
@@ -89,4 +52,5 @@ unset($_SESSION['score']);
 
 </body>
 </html>
+
 

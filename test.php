@@ -52,32 +52,8 @@ $vokabel = $_SESSION['vokabeln'][$current_question];
     <title>Vokabeltest</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="test.css">
     <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
-    <style>
-        .btn-lila { background-color: #D8A7E4; color: black; padding: 10px 20px; font-size: 16px; }
-        .btn-lila:hover { background-color: #C18ED3; }
-        .btn-secondary {
-            background-color: #d3d3d3;
-            color: black;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            flex: 1;
-        }
-        .btn-secondary:hover {
-            background-color: #b0b0b0; /* Etwas dunkleres Grau beim Hover */
-            color: black; /* Schwarze Schrift bleibt beim Hover */
-        }
-        .container { display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
-        .form-container { width: 100%; max-width: 500px; padding: 20px; background-color: #fff; border: 1px solid #ccc; border-radius: 8px; }
-        h2, h3, p { color: black; }
-        .button-container { display: flex; gap: 15px; justify-content: flex-start; margin-top: 20px; }
-        .input-group { display: flex; align-items: center; gap: 5px; }
-        .input-group .form-control { flex: 1; }
-        .microphone-button { background-color: #D8A7E4; border: none; color: black; cursor: pointer; padding: 8px 12px; border-radius: 5px; }
-        .microphone-button:hover { background-color: #C18ED3; }
-    </style>
     <script>
         function speakUserInput() {
             const userInput = document.querySelector('input[name="user_answer"]').value;
@@ -123,11 +99,4 @@ $vokabel = $_SESSION['vokabeln'][$current_question];
     </div>
 </div>
 </body>
-</html> 
-
-
-
-   
-
-
-
+</html>

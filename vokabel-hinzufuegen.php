@@ -43,66 +43,16 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vokabel Hinzufügen</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .btn-lila {
-            background-color: #D8A7E4;
-            color: black;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            flex: 1;
-        }
-        .btn-lila:hover {
-            background-color: #C18ED3;
-        }
-        .btn-secondary {
-            background-color: #d3d3d3;
-            color: black;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            flex: 1;
-        }
-        .btn-secondary:hover {
-            background-color: #b0b0b0; /* Etwas dunkleres Grau beim Hover */
-            color: black; /* Schwarze Schrift bleibt beim Hover */
-        }
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .form-container {
-            width: 100%;
-            max-width: 500px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            background-color: #fff;
-        }
-        h1 {
-            color: black;
-            text-align: center;
-        }
-        .button-container {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="vokabel-hinzufuegen.css">
 </head>
-<body class="bg-light">
+<body>
 
 <div class="container">
     <div class="form-container">
         <h2>Neue Vokabel hinzufügen</h2>
 
         <?php if (isset($message)): ?>
-            <div class="alert <?php echo $message_class; ?> mt-3"><?php echo $message; ?></div>
+            <div class="alert <?php echo $message_class; ?>"><?php echo $message; ?></div>
         <?php endif; ?>
 
         <!-- Formular zum Hinzufügen einer Vokabel -->
@@ -127,6 +77,7 @@ if (isset($_POST['submit'])) {
 
 </body>
 </html>
+
 
 
 

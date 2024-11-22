@@ -1,0 +1,59 @@
+/* Globale Styling-Regeln */
+body {
+    background-color: #f8f9fa; /* Leichtes Grau für den Hintergrund */
+}
+
+/* Styling für die Hauptcontainer */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Styling für das Formularcontainer */
+.form-container {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Styling für die Überschrift */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Styling für die Eingabefelder */
+.form-control {
+    margin-bottom: 15px;
+}
+
+/* Styling für die Fehlermeldung */
+.alert-danger {
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+/* Styling für den Login-Button */
+.btn-lila {
+    background-color: #D8A7E4;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.btn-lila:hover {
+    background-color: #C18ED3;
+}
+
+/* Styling für den Link zur Registrierung */
+.text-center {
+    text-align: center;
+    margin-top: 10px;
+}
