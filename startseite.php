@@ -1,80 +1,89 @@
 <?php
-session_start(); // Session starten
+session_start(); // Startet die PHP-Session, um Benutzerdaten zwischen Seiten zu speichern
 
-// Fehlerprotokollierung aktivieren
+// Aktiviert die Fehlerprotokollierung und zeigt alle Fehler an
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Wenn der Nutzer nicht eingeloggt ist, zur Login-Seite weiterleiten
+// Überprüfen, ob der Benutzer eingeloggt ist
 if (!isset($_SESSION["username"])) {
-    header("Location: index.php");
+    header("Location: index.php"); // Weiterleitung zur Login-Seite, falls nicht eingeloggt
     exit;
 }
 
-// Logout-Logik: Wenn der Logout-Button geklickt wird, Sitzung beenden und zur Login-Seite weiterleiten
+// Logout-Logik: Beendet die Sitzung, wenn der Logout-Button geklickt wird
 if (isset($_POST['logout'])) {
-    session_destroy();
-    header("Location: index.php");
+    session_destroy(); // Löscht alle Session-Daten
+    header("Location: index.php"); // Weiterleitung zur Login-Seite
     exit();
 }
 
-// Wenn der Button "Test starten" geklickt wurde, die Session-Variablen setzen und zu test.php weiterleiten
+// Logik für den Start des Tests
 if (isset($_POST['start_test'])) {
     try {
-        require_once(__DIR__ . '/mysql-vokabel.php');  // DB-Verbindung herstellen
-        $stmt = $mysql->query("SELECT * FROM Vokabeln");
-        if ($stmt) {
-            $_SESSION['vokabeln'] = $stmt->fetchAll(PDO::FETCH_ASSOC);  // Alle Vokabeln in der Session speichern
-            $_SESSION['current_question'] = 0;  // Setzt die erste Frage
-            $_SESSION['score'] = 0;  // Initialisiert den Punktestand
-            $_SESSION['test_started'] = true;  // Test als gestartet markieren
+        require_once(__DIR__ . '/mysql-vokabel.php'); // Stellt die Verbindung zur Datenbank her
+        $stmt = $mysql->query("SELECT * FROM Vokabeln"); // Ruft alle Vokabeln aus der Datenbank ab
 
-            // Weiterleitung zur Testseite
-            header("Location: test.php");
+        if ($stmt) {
+            $_SESSION['vokabeln'] = $stmt->fetchAll(PDO::FETCH_ASSOC); // Speichert alle Vokabeln in der Session
+            $_SESSION['current_question'] = 0; // Initialisiert die erste Frage
+            $_SESSION['score'] = 0; // Initialisiert den Punktestand
+            $_SESSION['test_started'] = true; // Markiert den Test als gestartet
+
+            header("Location: test.php"); // Weiterleitung zur Testseite
             exit();
         } else {
-            echo "Fehler bei der Datenbankabfrage.";
+            echo "Fehler bei der Datenbankabfrage."; // Fehler, wenn die Abfrage fehlschlägt
         }
     } catch (PDOException $e) {
+        // Gibt einen Fehler aus, wenn die Verbindung zur Datenbank fehlschlägt
         echo "Fehler bei der Verbindung zur Datenbank: " . $e->getMessage();
     }
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <!-- Metadaten und Titel -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vokabeltrainer</title>
+    
+    <!-- Bootstrap CSS für Styling -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Externe CSS-Datei für spezifisches Styling -->
     <link rel="stylesheet" href="startseite.css">
 </head>
-<body class="bg-light">
+<body class="bg-light"> <!-- Setzt den Hintergrund auf ein leichtes Grau -->
 
 <div class="container">
     <div class="form-container">
-        <!-- Logout-Button in der linken oberen Ecke -->
+        <!-- Logout-Button oben links -->
         <form method="POST">
-            <button type="submit" name="logout" class="btn-logout">Logout</button>
+            <button type="submit" name="logout" class="btn-logout">Logout</button> <!-- Beendet die Sitzung -->
         </form>
 
+        <!-- Begrüßungstext -->
         <h1>Herzlich Willkommen in deinem Vokabeltrainer!</h1>
         <h2>Teste jetzt deine Englischkenntnisse</h2>
         <p>Wähle eine Option, um fortzufahren...</p>
 
+        <!-- Hauptaktionen als Buttons -->
         <div class="button-container">
-            <!-- Button zum Test starten -->
+            <!-- Button zum Starten des Tests -->
             <form method="POST">
                 <button type="submit" name="start_test" class="btn btn-lila">Test starten</button>
             </form>
 
-            <!-- Button zum Vokabeln hinzufügen -->
+            <!-- Button zum Hinzufügen von Vokabeln -->
             <form method="GET" action="vokabel-hinzufuegen.php">
                 <button type="submit" class="btn btn-lila">Vokabeln hinzufügen</button>
             </form>
 
-            <!-- Button zum Vokabeln verwalten -->
+            <!-- Button zur Verwaltung von Vokabeln -->
             <form method="GET" action="vokabeln-verwalten.php">
                 <button type="submit" class="btn btn-lila">Vokabeln verwalten</button>
             </form>
@@ -84,9 +93,3 @@ if (isset($_POST['start_test'])) {
 
 </body>
 </html>
-
-
-
-
-
-

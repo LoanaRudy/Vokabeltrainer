@@ -1,93 +1,91 @@
 /* Allgemeines Styling für den Hintergrund */
 body {
-    background-color: #f8f9fa; /* Leichtes Grau für den Hintergrund */
+    background-color: #f8f9fa; /* Ein helles Grau sorgt für einen sanften Hintergrund, der die Inhalte hervorhebt */
 }
 
 /* Hauptcontainer Styling */
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+    display: flex; /* Flexbox-Layout für zentrierte Inhalte */
+    justify-content: center; /* Zentriert den Inhalt horizontal */
+    align-items: center; /* Zentriert den Inhalt vertikal */
+    min-height: 100vh; /* Container nimmt die volle Höhe des Bildschirms ein */
+    padding: 20px; /* Innenabstand für den Container */
 }
 
 /* Tabellencontainer Styling */
 .table-container {
-    width: 100%;
-    max-width: 800px;
-    padding: 30px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    width: 100%; /* Container nimmt die gesamte verfügbare Breite ein */
+    max-width: 800px; /* Maximale Breite der Tabelle */
+    padding: 30px; /* Innenabstand für den Container */
+    background-color: #fff; /* Weißer Hintergrund für die Tabelle */
+    border: 1px solid #ccc; /* Leichte Umrandung */
+    border-radius: 8px; /* Abgerundete Ecken */
 }
 
 /* Titel Styling */
 h1, h2 {
-    color: black;
-    text-align: center;
+    color: black; /* Schwarzer Text */
+    text-align: center; /* Zentriert die Überschriften */
 }
 
 /* Tabelle Styling */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    width: 100%; /* Tabelle füllt die gesamte Breite des Containers */
+    border-collapse: collapse; /* Entfernt doppelte Rahmen zwischen Tabellenzellen */
+    margin-top: 20px; /* Abstand nach oben */
 }
 
 th, td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
+    border: 1px solid #ccc; /* Zellen mit einem grauen Rahmen */
+    padding: 10px; /* Innenabstand innerhalb der Zellen */
+    text-align: left; /* Text innerhalb der Zellen wird linksbündig ausgerichtet */
 }
 
 th {
-    background-color: #e9ecef;
+    background-color: #e9ecef; /* Leichtes Grau für die Kopfzeile, um sie hervorzuheben */
 }
 
 /* Stil für das Mülleimer-Icon */
 .delete-icon {
-    color: gray;
-    font-size: 20px;
-    text-decoration: none;
-    cursor: pointer;
+    color: gray; /* Standardfarbe des Icons */
+    font-size: 20px; /* Größe des Icons */
+    text-decoration: none; /* Entfernt Unterstreichung */
+    cursor: pointer; /* Zeigt einen Zeiger an, wenn über das Icon gehovert wird */
 }
 .delete-icon:hover {
-    color: #dc3545; /* Rot bei Hover */
+    color: #dc3545; /* Beim Hover wird die Farbe Rot, um auf eine Aktion hinzuweisen */
 }
 
 /* Buttons Styling */
 .btn-lila {
-    background-color: #D8A7E4;
-    color: black;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+    background-color: #D8A7E4; /* Helllila für den Button-Hintergrund */
+    color: black; /* Schwarzer Text */
+    border: none; /* Kein Rahmen */
+    padding: 10px 20px; /* Innenabstand für die Größe des Buttons */
+    font-size: 16px; /* Schriftgröße */
+    cursor: pointer; /* Mauszeiger wird zum Zeiger bei Hover */
 }
 .btn-lila:hover {
-    background-color: #C18ED3;
+    background-color: #C18ED3; /* Dunkleres Lila bei Hover */
 }
 
 .btn-secondary {
-    background-color: #d3d3d3;
-    color: black;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+    background-color: #d3d3d3; /* Hellgrau für den Button-Hintergrund */
+    color: black; /* Schwarzer Text */
+    border: none; /* Kein Rahmen */
+    padding: 10px 20px; /* Innenabstand für die Größe des Buttons */
+    font-size: 16px; /* Schriftgröße */
+    cursor: pointer; /* Mauszeiger wird zum Zeiger bei Hover */
 }
 .btn-secondary:hover {
-    background-color: #b0b0b0; /* Etwas dunkleres Grau beim Hover */
-    color: black; /* Schwarze Schrift bleibt beim Hover */
+    background-color: #b0b0b0; /* Dunkleres Grau bei Hover */
+    color: black; /* Textfarbe bleibt schwarz */
 }
 
 /* Styling für die Buttoncontainer */
 .button-container {
-    display: flex;
-    justify-content: flex-start; /* Links ausrichten */
+    display: flex; /* Flexbox-Layout für die Buttons */
+    justify-content: flex-start; /* Buttons werden linksbündig ausgerichtet */
     gap: 15px; /* Abstand zwischen den Buttons */
-    margin-top: 20px;
+    margin-top: 20px; /* Abstand nach oben */
 }
-
-
