@@ -1,7 +1,7 @@
 <?php
-session_start(); // Startet die PHP-Session, um Benutzerdaten zwischen Seiten zu speichern
+session_start(); // Startet die PHP-Session, um Benutzerdaten zwischen den Seiten zu speichern
 
-// Aktiviert die Fehlerprotokollierung und zeigt alle Fehler an
+// Aktiviert die Fehlerprotokollierung und zeigt alle Fehler an (Debugging)
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -46,18 +46,17 @@ if (isset($_POST['start_test'])) {
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <!-- Metadaten und Titel -->
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vokabeltrainer</title>
     
-    <!-- Bootstrap CSS für Styling -->
+    <!-- Bootstrap CSS Einbindung -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Externe CSS-Datei für spezifisches Styling -->
     <link rel="stylesheet" href="startseite.css">
 </head>
-<body class="bg-light"> <!-- Setzt den Hintergrund auf ein leichtes Grau -->
+<body class="bg-light"> 
 
 <div class="container">
     <div class="form-container">
@@ -68,7 +67,9 @@ if (isset($_POST['start_test'])) {
 
         <!-- Begrüßungstext -->
         <h1>Herzlich Willkommen in deinem Vokabeltrainer!</h1>
+        <p></p>
         <h2>Teste jetzt deine Englischkenntnisse</h2>
+        <p></p>
         <p>Wähle eine Option, um fortzufahren...</p>
 
         <!-- Hauptaktionen als Buttons -->

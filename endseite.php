@@ -2,9 +2,9 @@
 // Starten der PHP-Session
 session_start();
 
-// Überprüfen, ob der Test überhaupt abgeschlossen wurde
+// Überprüft, ob der Test überhaupt abgeschlossen wurde
 if (!isset($_SESSION['test_started'])) {
-    // Wenn der Test nicht gestartet wurde, leite zur Startseite weiter
+    // Wenn der Test nicht gestartet wurde, wird man zur Startseite weitergeleitet
     header("Location: startseite.php");
     exit();
 }
@@ -27,18 +27,17 @@ unset($_SESSION['score']); // Punktestand zurücksetzen
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Seitentitel -->
     <title>Test abgeschlossen</title>
     
     <!-- Bootstrap CSS für das Styling -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="endseite.css"> <!-- Eigene CSS-Datei für individuelles Styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap CSS Einbindung -->
+    <link rel="stylesheet" href="endseite.css"> 
 </head>
 <body class="bg-light"> <!-- Heller Hintergrund -->
 
 <div class="container">
     <div class="form-container">
-        <!-- Glückwunsch-Nachricht -->
+      
         <h1>Herzlichen Glückwunsch!</h1>
         <p>Du hast den Test beendet.</p>
 

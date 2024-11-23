@@ -1,6 +1,6 @@
 /* Allgemeines Styling für den Hintergrund */
 body {
-    /* Setzt eine helle graue Hintergrundfarbe für die gesamte Seite */
+    /* Setzt hell graue Hintergrundfarbe für die gesamte Seite */
     background-color: #f8f9fa;
 }
 
@@ -12,50 +12,35 @@ body {
     align-items: center;
     /* Stellt sicher, dass der Container mindestens die volle Höhe des Viewports einnimmt */
     min-height: 100vh;
-    /* Fügt innen Abstand hinzu */
     padding: 20px;
 }
 
 /* Formularcontainer Styling */
 .form-container {
-    /* Legt die maximale Breite des Containers fest */
     width: 100%;
     max-width: 600px;
-    /* Fügt innen Abstand hinzu */
     padding: 30px;
-    /* Fügt eine dünne graue Umrandung hinzu */
     border: 1px solid #ccc;
-    /* Rundet die Ecken des Containers ab */
     border-radius: 8px;
-    /* Setzt den Hintergrund auf Weiß */
     background-color: #fff;
-    /* Zentriert den Text innerhalb des Containers */
     text-align: center;
 }
 
 /* Text Styling */
 h1, h2, p {
-    /* Setzt die Textfarbe auf Schwarz */
     color: black;
 }
 
 /* Styling für Buttons */
 .btn-lila {
-    /* Legt die Hintergrundfarbe auf Helllila fest */
     background-color: #D8A7E4;
-    /* Setzt die Textfarbe auf Schwarz */
     color: black;
-    /* Entfernt die Standardrahmen der Buttons */
     border: none;
-    /* Fügt innen Abstand hinzu */
     padding: 10px 20px;
-    /* Legt die Schriftgröße fest */
     font-size: 16px;
-    /* Ändert den Cursor zu einem Zeigefinger beim Hover */
     cursor: pointer;
 }
 .btn-lila:hover {
-    /* Dunkelt die Hintergrundfarbe beim Hover leicht ab */
     background-color: #C18ED3;
 }
 
@@ -64,8 +49,6 @@ h1, h2, p {
     /* Zentriert die Buttons horizontal */
     display: flex;
     justify-content: center;
-    /* Fügt Abstand zwischen den Buttons hinzu */
     gap: 15px;
-    /* Fügt einen oberen Abstand hinzu */
     margin-top: 25px;
 }

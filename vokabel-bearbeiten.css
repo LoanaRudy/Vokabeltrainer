@@ -1,6 +1,6 @@
 /* Hintergrundfarbe der gesamten Seite */
 body {
-    background-color: #f8f9fa; /* Leichtes Grau für den Hintergrund */
+    background-color: #f8f9fa; 
 }
 
 /* Container für das Formular */
@@ -22,14 +22,14 @@ body {
     border-radius: 8px;
 }
 
-/* Überschrift Styling */
+/* Styling für Überschrift */
 h2 {
     text-align: center;
     margin-bottom: 20px;
     color: #333;
 }
 
-/* Formular-Eingabefelder Styling */
+/* Styling für Formular-Eingabefelder */
 .form-control {
     margin-bottom: 15px;
     font-size: 16px;
@@ -51,32 +51,32 @@ h2 {
 }
 
 .btn-primary {
-    background-color: #D8A7E4; /* Lila */
+    background-color: #D8A7E4; 
     color: black;
     border: none;
 }
 
 .btn-primary:hover {
-    background-color: #C18ED3; /* Dunkleres Lila beim Hover */
-    color: black; /* Textfarbe bleibt schwarz */
+    background-color: #C18ED3; 
+    color: black; 
 }
 
 .btn-secondary {
-    background-color: #d3d3d3; /* Grau */
+    background-color: #d3d3d3; 
     color: black;
     border: none;
 }
 
 .btn-secondary:hover {
-    background-color: #b0b0b0; /* Dunkleres Grau beim Hover */
-    color: black; /* Textfarbe bleibt schwarz */
+    background-color: #b0b0b0;
+    color: black; 
 }
 
-/* Button-Container Styling */
+/* Styling für Button-Container */
 .button-container {
     display: flex;
     justify-content: space-between;
-    gap: 20px; /* Erhöhter Abstand zwischen den Buttons */
+    gap: 20px; 
     margin-top: 20px;
 }
 

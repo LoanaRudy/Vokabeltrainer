@@ -1,31 +1,30 @@
-/* Globale Styling-Regeln für die gesamte Seite */
 body {
-    background-color: #f8f9fa; /* Setzt einen leichten Grauton als Hintergrundfarbe */
+    background-color: #f8f9fa; /* Leichtes Grau für den Hintergrund */
 }
 
 /* Styling für den Hauptcontainer, der das Formular zentriert */
 .container {
-    display: flex; /* Aktiviert Flexbox für eine einfache Zentrierung */
-    justify-content: center; /* Zentriert den Inhalt horizontal */
-    align-items: center; /* Zentriert den Inhalt vertikal */
-    height: 100vh; /* Höhe des Containers auf die gesamte Bildschirmhöhe setzen */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; /* Höhe des Containers auf die gesamte Bildschirmhöhe */
 }
 
-/* Styling für das Formularcontainer */
+/* Styling für den Formularcontainer */
 .form-container {
-    background-color: #f9f9f9; /* Weißliches Grau als Hintergrundfarbe des Formulars */
-    padding: 30px; /* Innenabstand innerhalb des Containers */
-    border-radius: 8px; /* Abgerundete Ecken für ein modernes Design */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Leichter Schatten für einen schwebenden Effekt */
-    width: 100%; /* Breite auf die gesamte verfügbare Fläche setzen */
-    max-width: 400px; /* Maximale Breite begrenzen, damit das Formular nicht zu groß wird */
+    background-color: #f9f9f9; 
+    padding: 30px; 
+    border-radius: 8px; 
+    border: 1px solid #ccc; 
+    width: 100%; 
+    max-width: 400px; 
 }
 
 /* Styling für die Überschrift des Formulars */
 h1 {
-    text-align: center; /* Überschrift zentrieren */
-    margin-bottom: 20px; /* Abstand nach unten für visuelle Trennung */
-    color: #333; /* Dunkler Grauton für die Schrift */
+    text-align: center; 
+    margin-bottom: 20px; 
+    color: black; 
 }
 
 /* Styling für die Eingabefelder im Formular */
@@ -36,24 +35,25 @@ h1 {
 /* Styling für die Fehlermeldung */
 .alert-danger {
     margin-top: 5px; /* Abstand oberhalb der Fehlermeldung */
-    font-size: 0.9rem; /* Schriftgröße für die Fehlermeldung leicht verkleinern */
+    font-size: 16px; 
 }
 
 /* Styling für den Erstellen-Button */
 .btn-lila {
-    background-color: #D8A7E4; /* Lila Grundfarbe */
-    color: black; /* Schwarze Schriftfarbe für guten Kontrast */
-    border: none; /* Keine Umrandung für ein sauberes Design */
-    padding: 10px 20px; /* Innenabstand für mehr Klickfläche */
-    font-size: 16px; /* Schriftgröße des Buttons */
-    cursor: pointer; /* Mauszeiger zeigt eine Hand an, wenn der Button aktiv ist */
+    background-color: #D8A7E4; 
+    color: black; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
 }
 .btn-lila:hover {
-    background-color: #C18ED3; /* Dunkleres Lila beim Hovern */
+    background-color: #C18ED3; 
 }
 
 /* Styling für den Link zur Anmeldung */
 .text-center {
-    text-align: center; /* Text zentrieren */
-    margin-top: 10px; /* Abstand nach oben für visuelle Trennung vom Formular */
+    text-align: center; 
+    margin-top: 10px; 
 }
+

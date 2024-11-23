@@ -2,10 +2,10 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8"> <!-- Zeichensatz UTF-8 für internationale Zeichen -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Optimierung für mobile Geräte -->
-    <title>Login</title> <!-- Titel der Seite -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="index.css"> <!-- Externe CSS-Datei für individuelles Styling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Login</title> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap CSS Einbindung -->
+    <link rel="stylesheet" href="index.css"> 
 </head>
 <body class="bg-light"> <!-- Hintergrundfarbe auf helles Grau gesetzt -->
 
@@ -39,14 +39,14 @@
         }
         ?>
 
-        <h1>Anmelden</h1> <!-- Überschrift für das Formular -->
+        <h1>Anmelden</h1> 
 
         <!-- Login-Formular -->
         <form action="index.php" method="post"> <!-- Formular, das Daten an sich selbst sendet -->
             <input type="text" name="username" class="form-control" placeholder="Username" required> <!-- Eingabefeld für den Benutzernamen -->
             <input type="password" name="pw" class="form-control" placeholder="Passwort" required> <!-- Eingabefeld für das Passwort -->
 
-            <!-- Anzeige der Fehlermeldung, falls vorhanden -->
+            <!-- Anzeige der Fehlermeldung, falls vorhanden (Debugging) -->
             <?php if (!empty($error_message)): ?>
                 <div class="alert alert-danger mt-2"><?php echo $error_message; ?></div> <!-- Fehlermeldung unter dem Passwortfeld -->
             <?php endif; ?>

@@ -1,99 +1,97 @@
-/* Allgemeines Styling für den Hintergrund */
 body {
     background-color: #f8f9fa; /* Leichtes Grau für den Hintergrund, um den Hauptinhalt hervorzuheben */
 }
 
 /* Hauptcontainer Styling */
 .container {
-    display: flex; /* Flexbox für einfache Ausrichtung */
-    justify-content: center; /* Zentriert den Inhalt horizontal */
-    align-items: center; /* Zentriert den Inhalt vertikal */
-    min-height: 100vh; /* Füllt die gesamte Höhe des Viewports */
-    padding: 20px; /* Sorgt für einen angenehmen Abstand */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh;     padding: 20px; 
 }
 
 /* Formularcontainer Styling */
 .form-container {
-    width: 100%; /* Füllt den verfügbaren Platz */
-    max-width: 500px; /* Begrenzung der Breite für bessere Lesbarkeit */
-    padding: 20px; /* Innenabstand für die Inhalte */
-    background-color: #fff; /* Weißer Hintergrund für Kontrast */
-    border: 1px solid #ccc; /* Leichte Umrandung */
-    border-radius: 8px; /* Abgerundete Ecken für modernes Design */
+    width: 100%; 
+    max-width: 500px; 
+    padding: 20px; 
+    background-color: #fff;
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
 }
 
 /* Text Styling */
 h2, h3, p {
-    color: black; /* Einheitliche schwarze Schriftfarbe */
+    color: black; 
 }
 
 /* Styling für Buttons */
 
 /* Primärer Button (z. B. Antwort absenden) */
 .btn-lila {
-    background-color: #D8A7E4; /* Helles Lila für auffälligen Stil */
-    color: black; /* Textfarbe in Schwarz für gute Lesbarkeit */
-    border: none; /* Entfernt Standardumrandung */
-    padding: 10px 20px; /* Angenehme Größe für Interaktivität */
-    font-size: 16px; /* Lesbare Schriftgröße */
-    cursor: pointer; /* Zeigt an, dass der Button interaktiv ist */
+    background-color: #D8A7E4; 
+    color: black; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
 }
 .btn-lila:hover {
-    background-color: #C18ED3; /* Dunkleres Lila bei Hover-Effekt */
+    background-color: #C18ED3; 
 }
 
 /* Sekundärer Button (z. B. Test abbrechen) */
 .btn-secondary {
-    background-color: #d3d3d3; /* Dezentes Grau als Hintergrund */
-    color: black; /* Schwarzer Text für Kontrast */
-    border: none; /* Keine Umrandung */
-    padding: 10px 20px; /* Gleiche Größe wie der primäre Button */
-    font-size: 16px; /* Einheitliche Schriftgröße */
-    cursor: pointer; /* Interaktivität anzeigen */
+    background-color: #d3d3d3; 
+    color: black; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
 }
 .btn-secondary:hover {
-    background-color: #b0b0b0; /* Etwas dunkleres Grau bei Hover-Effekt */
-    color: black; /* Textfarbe bleibt schwarz */
+    background-color: #b0b0b0; 
+    color: black; 
 }
 
 /* Styling für den Mikrofon-Button */
 .microphone-button {
-    background-color: #D8A7E4; /* Gleiche Farbe wie primärer Button */
-    border: none; /* Keine Umrandung */
-    color: black; /* Schwarze Schriftfarbe */
-    cursor: pointer; /* Interaktivität anzeigen */
-    padding: 8px 12px; /* Kleinere Größe für kompakte Darstellung */
-    border-radius: 5px; /* Leicht abgerundete Ecken */
+    background-color: #D8A7E4; 
+    border: none; 
+    color: black; 
+    cursor: pointer; 
+    padding: 8px 12px; 
+    border-radius: 5px; 
 }
 .microphone-button:hover {
-    background-color: #C18ED3; /* Dunklerer Ton bei Hover */
+    background-color: #C18ED3; 
 }
 
 /* Inputgruppe Styling */
 
 /* Container für Eingabefeld und Mikrofon-Button */
 .input-group {
-    display: flex; /* Flexbox für horizontale Ausrichtung */
-    align-items: center; /* Vertikale Ausrichtung */
-    gap: 5px; /* Abstand zwischen Eingabefeld und Button */
+    display: flex; 
+    align-items: center; 
+    gap: 5px; 
 }
 
 /* Eingabefeld innerhalb der Input-Gruppe */
 .input-group .form-control {
-    flex: 1; /* Eingabefeld nimmt den verbleibenden Platz ein */
+    flex: 1; 
 }
 
 /* Styling für die Buttons Antwort absenden und Test abbrechen */
 .button-container {
-    display: flex; /* Flexbox für horizontale Anordnung */
-    justify-content: flex-start; /* Buttons linksbündig ausrichten */
-    gap: 10px; /* Abstand zwischen den Buttons */
-    margin-top: 20px; /* Abstand nach oben für visuelle Trennung */
+    display: flex; 
+    justify-content: flex-start; 
+    gap: 10px; 
+    margin-top: 
 }
 
 /* Styling für die Feedback-Nachricht */
 .alert {
-    margin-top: 10px; /* Abstand oberhalb der Nachricht */
+    margin-top: 10px;
 }
 
 

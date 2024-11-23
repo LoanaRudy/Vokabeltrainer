@@ -1,75 +1,74 @@
-/* Allgemeines Styling für den Hintergrund */
 body {
-    background-color: #f8f9fa; /* Leichtes Grau für den Hintergrund, sorgt für eine sanfte Optik */
+    background-color: #f8f9fa; 
 }
 
 /* Hauptcontainer Styling */
 .container {
-    display: flex; /* Flexbox-Layout für zentrierten Inhalt */
-    justify-content: center; /* Inhalt horizontal zentrieren */
-    align-items: center; /* Inhalt vertikal zentrieren */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
     min-height: 100vh; /* Container nimmt die volle Höhe des Viewports ein */
-    padding: 20px; /* Innenabstand für ein angenehmes Layout */
+    padding: 20px; 
 }
 
 /* Formularcontainer Styling */
 .form-container {
-    width: 100%; /* Container füllt den verfügbaren Platz */
-    max-width: 500px; /* Maximale Breite des Formulars */
-    padding: 20px; /* Innenabstand für Inhalt */
-    background-color: #fff; /* Weißer Hintergrund für das Formular */
-    border: 1px solid #ccc; /* Dezente graue Umrandung */
-    border-radius: 8px; /* Abgerundete Ecken für ein modernes Design */
+    width: 100%; 
+    max-width: 500px; 
+    padding: 20px; 
+    background-color: #fff;
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
 }
 
 /* Text Styling */
 h2, h3, p {
-    color: black; /* Textfarbe Schwarz für optimale Lesbarkeit */
+    color: black; 
 }
 
 /* Styling für Buttons */
 .btn-lila {
-    background-color: #D8A7E4; /* Lila Farbe für den Hintergrund */
-    color: black; /* Schwarze Schrift auf dem Button */
-    border: none; /* Entfernt die Standardrahmen der Buttons */
-    padding: 10px 20px; /* Innenabstand für einen angenehmen Klickbereich */
-    font-size: 16px; /* Schriftgröße */
-    cursor: pointer; /* Mauszeiger zeigt Hand beim Überfahren des Buttons */
+    background-color: #D8A7E4; 
+    color: black; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
 }
 .btn-lila:hover {
-    background-color: #C18ED3; /* Etwas dunkleres Lila beim Hover */
+    background-color: #C18ED3; 
 }
 
 /* Styling für den Zurück-Button */
 .btn-secondary {
-    background-color: #d3d3d3; /* Hellgrauer Hintergrund */
-    color: black; /* Schwarzer Text für Lesbarkeit */
-    border: none; /* Keine Rahmen */
-    padding: 10px 20px; /* Angenehme Größe des Buttons */
-    font-size: 16px; /* Lesbare Schriftgröße */
-    cursor: pointer; /* Hand-Cursor beim Hover */
+    background-color: #d3d3d3; 
+    color: black; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
 }
 .btn-secondary:hover {
-    background-color: #b0b0b0; /* Etwas dunkleres Grau beim Hover */
-    color: black; /* Textfarbe bleibt Schwarz */
+    background-color: #b0b0b0; 
+    color: black; 
 }
 
 /* Inputgruppe Styling */
 .input-group {
-    display: flex; /* Flexbox für eine horizontale Anordnung */
-    align-items: center; /* Elemente vertikal ausrichten */
-    gap: 15px; /* Abstand zwischen Eingabefeld und Button */
+    display: flex; 
+    align-items: center;
+    gap: 15px; 
 }
 .input-group .form-control {
-    flex: 1; /* Eingabefeld nimmt den verfügbaren Platz ein */
+    flex: 1; 
 }
 
 /* Styling für die Buttons Antwort absenden und Test abbrechen */
 .button-container {
-    display: flex; /* Buttons nebeneinander anzeigen */
-    justify-content: flex-start; /* Buttons linksbündig ausrichten */
-    gap: 10px; /* Geringer Abstand zwischen den Buttons */
-    margin-top: 20px; /* Abstand nach oben für Trennung zum Formular */
+    display: flex; 
+    justify-content: flex-start; 
+    gap: 10px; 
+    margin-top: 20px; 
 }
 
 /* Styling für Erfolgsmeldung*/

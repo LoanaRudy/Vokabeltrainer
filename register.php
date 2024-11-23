@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8"> <!-- Zeichensatz auf UTF-8 gesetzt -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsives Design aktiviert -->
-    <title>Account erstellen</title> <!-- Seitentitel -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap CSS eingebunden -->
-    <link rel="stylesheet" href="register.css"> <!-- Externe CSS-Datei für individuelles Styling -->
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Account erstellen</title> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap CSS Einbindung -->
+    <link rel="stylesheet" href="register.css"> 
 </head>
 <body class="bg-light"> <!-- Heller Hintergrund für die gesamte Seite -->
 
@@ -32,7 +32,7 @@
                     
                     // Passwort hashen
                     $hash = password_hash($_POST["pw"], PASSWORD_BCRYPT);
-                    $stmt->bindParam(":pw", $hash); // Bindet das gehashte Passwort
+                    $stmt->bindParam(":pw", $hash); // Bindet das gehashtes Passwort
                     $stmt->execute();
 
                     // Erfolgreiche Registrierung -> Weiterleitung zur Startseite

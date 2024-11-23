@@ -2,7 +2,7 @@
 // Startet die Session, um auf Session-Variablen wie den Benutzernamen zugreifen zu können
 session_start(); 
 
-// Aktiviert die Anzeige aller Fehler und Warnungen zur leichteren Fehlerbehebung während der Entwicklung
+// Aktiviert die Anzeige aller Fehler und Warnungen zur leichteren Fehlerbehebung (Debugging)
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -55,9 +55,8 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vokabel Hinzufügen</title>
-    <!-- Einbindung von Bootstrap für ein einfaches und ansprechendes Styling -->
+    <!-- CSS Bootstrap Einbindung -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Einbindung der eigenen CSS-Datei für individuelles Styling -->
     <link rel="stylesheet" href="vokabel-hinzufuegen.css">
 </head>
 <body>
@@ -65,7 +64,6 @@ if (isset($_POST['submit'])) {
 <!-- Hauptcontainer für das Formular -->
 <div class="container">
     <div class="form-container">
-        <!-- Überschrift der Seite -->
         <h2>Neue Vokabel hinzufügen</h2>
 
         <!-- Formular für die Benutzereingaben -->

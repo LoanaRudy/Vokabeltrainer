@@ -38,10 +38,10 @@ if (isset($_POST['submit_answer'])) {
     if (strcasecmp($user_answer, $correct_answer) == 0) { // Vergleich der Antworten (Groß-/Kleinschreibung ignoriert)
         $_SESSION['score']++; // Punktestand erhöhen
         $response = "Richtig!"; // Erfolgsnachricht
-        $response_class = 'success'; // Erfolgsfarbe
+        $response_class = 'success'; // Erfolgsfarbe (grün)
     } else {
         $response = "Falsch! Die richtige Antwort wäre: " . $correct_answer; // Fehlermeldung mit richtiger Antwort
-        $response_class = 'danger'; // Fehlerfarbe
+        $response_class = 'danger'; // Fehlerfarbe (rot)
     }
 
     // Zur nächsten Frage wechseln
@@ -65,16 +65,15 @@ $vokabel = $_SESSION['vokabeln'][$current_question];
 <head>
     <meta charset="UTF-8">
     <title>Vokabeltest</title>
-    <!-- Bootstrap CSS für Styling -->
+    <!-- Bootstrap CSS Einbindung -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons für das Mikrofon-Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <!-- Externe CSS-Datei für das Styling der Seite -->
     <link rel="stylesheet" href="test.css">
-    <!-- Script für die Sprachausgabe -->
+    <!-- Script für die ResponsiveVoice Text to Speech API -->
     <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
     <script>
-        // Funktion zur Sprachausgabe der Benutzereingabe
+        // Funktion zur Sprachausgabe der Benutzereingabe über API
         function speakUserInput() {
             const userInput = document.querySelector('input[name="user_answer"]').value; // Benutzereingabe abrufen
             if (userInput) {
@@ -83,6 +82,7 @@ $vokabel = $_SESSION['vokabeln'][$current_question];
                 alert("Bitte gib ein Wort ein, das vorgelesen werden soll."); // Warnung bei leerer Eingabe
             }
         }
+
     </script>
 </head>
 <body class="bg-light">
@@ -90,7 +90,6 @@ $vokabel = $_SESSION['vokabeln'][$current_question];
 <!-- Hauptcontainer -->
 <div class="container">
     <div class="form-container">
-        <!-- Überschrift und Anweisungen -->
         <h2>Vokabeltest</h2>
         <p>Übersetze das Wort auf Englisch:</p>
         <h3><?php echo htmlspecialchars($vokabel['deutsches_Wort']); ?></h3> <!-- Deutsches Wort anzeigen -->

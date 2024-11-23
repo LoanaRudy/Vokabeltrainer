@@ -1,14 +1,14 @@
 <?php
-// Fehlerprotokollierung aktivieren
-// Zeigt alle PHP-Fehler und -Warnungen an, um während der Entwicklung Probleme zu identifizieren
+// Fehlerprotokollierung aktivieren (Debugging)
+// Zeigt alle PHP-Fehler und -Warnungen an, um Probleme schneller zu identifizieren
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Verbindungsparameter zur Datenbank
-$host = 'localhost'; // Der Hostname des Datenbankservers, üblicherweise "localhost"
-$dbname = 'vokabeln_db'; // Der Name der Datenbank, die verwendet wird
-$user = 'root'; // Der Benutzername für die Datenbankverbindung, bei XAMPP häufig "root"
-$pass = ''; // Das Passwort für die Verbindung, bei XAMPP oft leer
+$host = 'localhost'; // Der Hostname des Datenbankservers
+$dbname = 'vokabeln_db'; // Der Name meiner Datenbank für die Vokabeln
+$user = 'root'; // Der Benutzername für die Datenbankverbindung
+$pass = ''; // Das leere Passwort für die Verbindung
 
 try {
     // Erstellung der PDO-Datenbankverbindung

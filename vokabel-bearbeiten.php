@@ -28,7 +28,7 @@ if (isset($_GET['id'])) {
     $stmt->execute([':id' => $id]);
     $vokabel = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Falls keine Vokabel gefunden wurde, zurück zur Verwaltungsseite
+    // Falls keine Vokabel gefunden wurde, zurück zur Seite Vokabeln verwalten
     if (!$vokabel) {
         header("Location: vokabeln-verwalten.php");
         exit();
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $deutsches_wort = trim($_POST['deutsches_wort']);
     $englisches_wort = trim($_POST['englisches_wort']);
 
-    // Validiert die Eingabefelder
+    // Validierung der Eingabefelder
     if (!empty($deutsches_wort) && !empty($englisches_wort)) {
         try {
             // Aktualisiert die Vokabel in der Datenbank
@@ -67,7 +67,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vokabel bearbeiten</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">  <!-- Bootstrap CSS Einbindung -->
+
     <link rel="stylesheet" href="vokabel-bearbeiten.css">
 
 </head>

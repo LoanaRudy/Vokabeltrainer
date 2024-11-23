@@ -12,7 +12,7 @@ if (!isset($_SESSION["username"])) {
 // Vokabel aus der Session abrufen
 $vokabel = $_SESSION['vokabel'];
 
-// Überprüfen, ob der Benutzer eine Antwort eingereicht hat
+// Überprüft, ob der Benutzer eine Antwort gegeben hat
 if (isset($_POST['antwort'])) {
     // Benutzerantwort normalisieren: in Kleinbuchstaben umwandeln und Leerzeichen entfernen
     $userAntwort = strtolower(trim($_POST['antwort']));
@@ -27,6 +27,7 @@ if (isset($_POST['antwort'])) {
 
         // Punktestand in der Session aktualisieren oder initialisieren
         $_SESSION['punkte'] = isset($_SESSION['punkte']) ? $_SESSION['punkte'] + 1 : 1;
+        
     } else {
         // Wenn falsch, Fehlermeldung und korrekte Antwort anzeigen
         echo "<h1 style='color: red;'>Falsch!</h1>";

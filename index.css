@@ -1,60 +1,59 @@
-/* Globale Styling-Regeln für die gesamte Seite */
 body {
-    background-color: #f8f9fa; /* Helles Grau für den Hintergrund der Seite */
+    background-color: #f8f9fa; 
 }
 
 /* Hauptcontainer, der das Formular zentriert */
 .container {
-    display: flex; /* Flexbox zur Zentrierung */
-    justify-content: center; /* Horizontal zentrieren */
-    align-items: center; /* Vertikal zentrieren */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
     height: 100vh; /* Gesamte Höhe des Viewports */
 }
 
-/* Styling für das Formularcontainer */
+/* Styling für den Formularcontainer */
 .form-container {
-    background-color: #f9f9f9; /* Heller Hintergrund für das Formular */
-    padding: 30px; /* Innenabstand um den Inhalt */
-    border-radius: 8px; /* Abgerundete Ecken für ein modernes Design */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Weicher Schatten um das Formular */
-    width: 100%; /* Formular nimmt die gesamte verfügbare Breite ein */
-    max-width: 400px; /* Maximale Breite des Formulars */
+    background-color: #f9f9f9; 
+    padding: 30px; 
+    border-radius: 8px; 
+    border: 1px solid #ccc; 
+    width: 100%; 
+    max-width: 400px; 
 }
 
 /* Styling für die Überschrift des Formulars */
 h1 {
-    text-align: center; /* Zentriert die Überschrift */
-    margin-bottom: 20px; /* Abstand nach unten zur nächsten Komponente */
-    color: #333; /* Dunkler Grauton für die Schriftfarbe */
+    text-align: center; 
+    margin-bottom: 20px; 
+    color: black; 
 }
 
 /* Styling für die Eingabefelder */
 .form-control {
-    margin-bottom: 15px; /* Abstand zwischen den Eingabefeldern */
+    margin-bottom: 15px; 
 }
 
 /* Styling für die Fehlermeldung */
 .alert-danger {
-    margin-top: 5px; /* Abstand nach oben */
-    font-size: 0.9rem; /* Etwas kleinere Schriftgröße für die Fehlermeldung */
+    margin-top: 5px; 
+    font-size: 16px; 
 }
 
 /* Styling für den Login-Button */
 .btn-lila {
-    background-color: #D8A7E4; /* Helllila Hintergrundfarbe */
-    color: black; /* Schwarze Schriftfarbe */
-    border: none; /* Kein Rahmen */
-    padding: 10px 20px; /* Innenabstand des Buttons */
-    font-size: 16px; /* Schriftgröße */
-    cursor: pointer; /* Zeigt die Hand beim Hover an */
+    background-color: #D8A7E4; 
+    color: black; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
 }
 .btn-lila:hover {
-    background-color: #C18ED3; /* Dunkleres Lila bei Hover */
+    background-color: #C18ED3; 
 }
 
 /* Styling für den Link zur Registrierung */
 .text-center {
-    text-align: center; /* Zentriert den Link */
-    margin-top: 10px; /* Abstand nach oben */
+    text-align: center; 
+    margin-top: 10px; 
 }
 

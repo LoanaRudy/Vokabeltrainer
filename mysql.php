@@ -1,9 +1,9 @@
 <?php
 // Datenbankverbindungsdetails festlegen
-$host = "localhost"; // Der Hostname des Datenbankservers, üblicherweise "localhost"
-$name = "test"; // Der Name der zu verwendenden Datenbank
+$host = "localhost"; // Der Hostname des Datenbankservers
+$name = "test"; // Der Name meiner Datenbank für die Benutzerkonten
 $user = "root"; // Der Benutzername für die Datenbankverbindung
-$passwort = ""; // Das Passwort für die Datenbankverbindung (bei XAMPP oft leer)
+$passwort = ""; // Das leere Passwort für die Datenbankverbindung 
 
 // Versuch, eine Verbindung zur Datenbank herzustellen
 try {
@@ -12,10 +12,10 @@ try {
     $mysql = new PDO("mysql:host=$host;dbname=$name", $user, $passwort);
 
 
-    // Wenn die Verbindung erfolgreich ist, passiert hier nichts weiter
+    // Wenn die Verbindung erfolgreich ist, passiert hier nichts 
 } catch (PDOException $e) { // Falls ein Fehler auftritt
     // Fehlermeldung ausgeben, wenn die Verbindung fehlschlägt
     echo "SQL Error: " . $e->getMessage();
-    // Der Fehler wird mit einer Nachricht angezeigt, die die Ursache beschreibt
+    // Der Fehler wird mit einer Nachricht angezeigt, die die Ursache beschreibt (Debugging)
 }
 ?>
