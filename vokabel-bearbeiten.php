@@ -76,13 +76,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="form-container">
         <h2>Vokabel bearbeiten</h2>
 
-        <!-- Erfolgsmeldung -->
-        <?php if (!empty($message)): ?>
-            <div class="alert alert-success">
-                <?php echo $message; ?>
-            </div>
-        <?php endif; ?>
-
         <!-- Formular zum Bearbeiten der Vokabel -->
         <form method="POST" action="vokabel-bearbeiten.php?id=<?php echo $id; ?>">
             <div class="mb-3">
@@ -95,6 +88,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="text" class="form-control" id="englisches_wort" name="englisches_wort"
                        value="<?php echo htmlspecialchars($vokabel['englisches_Wort']); ?>" required>
             </div>
+
+            <!-- Erfolgsmeldung wird hier nach den Eingabefeldern angezeigt -->
+            <?php if (!empty($message)): ?>
+                <div class="alert alert-success mt-3">
+                    <?php echo $message; ?>
+                </div>
+            <?php endif; ?>
+
             <button type="submit" class="btn btn-primary">Änderungen speichern</button>
             <a href="vokabeln-verwalten.php" class="btn btn-secondary">Zurück</a>
         </form>
@@ -102,3 +103,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 </body>
 </html>
+

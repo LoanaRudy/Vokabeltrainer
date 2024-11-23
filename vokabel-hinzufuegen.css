@@ -72,8 +72,8 @@ h2, h3, p {
     margin-top: 20px; /* Abstand nach oben für Trennung zum Formular */
 }
 
-/* Styling für die Feedback-Nachricht */
+/* Styling für Erfolgsmeldung*/
 .alert {
-    margin-top: 10px; /* Abstand nach oben für Lesbarkeit */
+    margin-top: 10px; 
 }
 

@@ -37,10 +37,7 @@ h2 {
 
 /* Styling für Erfolgsmeldungen */
 .alert {
-    margin-bottom: 20px;
-    padding: 10px;
-    font-size: 14px;
-    border-radius: 5px;
+    margin-top: 10px
 }
 
 /* Buttons Styling */
@@ -79,7 +76,7 @@ h2 {
 .button-container {
     display: flex;
     justify-content: space-between;
-    gap: 25px; /* Erhöhter Abstand zwischen den Buttons */
+    gap: 20px; /* Erhöhter Abstand zwischen den Buttons */
     margin-top: 20px;
 }
 

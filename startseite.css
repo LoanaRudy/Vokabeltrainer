@@ -68,7 +68,7 @@ body {
 /* Styling für die Überschriften und Texte */
 /* Einheitliche Farbgestaltung für alle Textelemente */
 h1, h2, p {
-    color: black; /* Schwarzer Text für Lesbarkeit */
+    color: black; 
 }
 
 /* Button-Container Styling */
