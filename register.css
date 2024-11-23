@@ -1,5 +1,5 @@
 body {
-    background-color: #f8f9fa; /* Leichtes Grau für den Hintergrund */
+    background-color: #f8f9fa; 
 }
 
 /* Styling für den Hauptcontainer, der das Formular zentriert */
@@ -12,7 +12,7 @@ body {
 
 /* Styling für den Formularcontainer */
 .form-container {
-    background-color: #f9f9f9; 
+    background-color: #ffffff; 
     padding: 30px; 
     border-radius: 8px; 
     border: 1px solid #ccc; 

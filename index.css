@@ -12,12 +12,12 @@ body {
 
 /* Styling für den Formularcontainer */
 .form-container {
-    background-color: #f9f9f9; 
+    background-color: #ffffff; 
     padding: 30px; 
     border-radius: 8px; 
     border: 1px solid #ccc; 
     width: 100%; 
-    max-width: 400px; 
+    max-width: 400px;
 }
 
 /* Styling für die Überschrift des Formulars */
