@@ -1,45 +1,50 @@
 <?php
-// Startet die Session, um Benutzerdaten während der Sitzung verfügbar zu machen
+// Startet die Session, um auf Session-Variablen wie den Benutzernamen zugreifen zu können
 session_start(); 
 
-// Aktiviert die Fehlerprotokollierung, damit du Fehler und Warnungen während der Entwicklung siehst
+// Aktiviert die Anzeige aller Fehler und Warnungen zur leichteren Fehlerbehebung während der Entwicklung
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Überprüft, ob der Benutzer eingeloggt ist, indem geprüft wird, ob die Session-Variable "username" gesetzt ist
 if (!isset($_SESSION["username"])) {
-    // Wenn nicht eingeloggt, wird der Benutzer zur Login-Seite weitergeleitet
+    // Wenn der Benutzer nicht eingeloggt ist, wird er zur Login-Seite weitergeleitet
     header("Location: index.php");
     exit;
 }
 
-// Überprüft, ob das Formular zum Hinzufügen einer Vokabel abgeschickt wurde
+// Bindet die Datei ein, die die Verbindung zur Datenbank herstellt
+require_once('mysql-vokabel.php');
+
+// Initialisiert die Nachricht, die als Feedback angezeigt wird
+$message = "";
+
+// Überprüft, ob das Formular durch Drücken des Buttons "Vokabel hinzufügen" abgeschickt wurde
 if (isset($_POST['submit'])) {
-    // Bindet die Datei zur Datenbankverbindung ein
-    require_once('mysql-vokabel.php');
+    // Holt die Benutzereingaben aus dem Formular und entfernt Leerzeichen am Anfang und Ende
+    $deutsches_wort = trim($_POST['deutsches_wort']);
+    $englisches_wort = trim($_POST['englisches_wort']);
 
-    // Holt die eingegebenen Wörter aus dem Formular
-    $deutsches_wort = $_POST['deutsches_wort'];
-    $englisches_wort = $_POST['englisches_wort'];
-
-    // Überprüft, ob beide Eingabefelder nicht leer sind
+    // Überprüft, ob beide Eingabefelder ausgefüllt wurden
     if (!empty($deutsches_wort) && !empty($englisches_wort)) {
-        // Bereitet einen SQL-Befehl vor, um die neuen Vokabeln in die Datenbank einzufügen
-        $stmt = $mysql->prepare("INSERT INTO Vokabeln (deutsches_Wort, englisches_Wort) VALUES (:deutsch, :englisch)");
-        
-        // Führt den SQL-Befehl mit den eingegebenen Daten aus
-        $stmt->execute([
-            ':deutsch' => $deutsches_wort, // Platzhalter für das deutsche Wort
-            ':englisch' => $englisches_wort // Platzhalter für das englische Wort
-        ]);
+        try {
+            // Bereitet eine SQL-Anweisung vor, um die eingegebene Vokabel in die Datenbank einzufügen
+            $stmt = $mysql->prepare("INSERT INTO Vokabeln (deutsches_Wort, englisches_Wort) VALUES (:deutsch, :englisch)");
+            // Führt die SQL-Anweisung aus und ersetzt die Platzhalter durch die eingegebenen Werte
+            $stmt->execute([
+                ':deutsch' => $deutsches_wort, // Wert für das Feld "deutsches_Wort"
+                ':englisch' => $englisches_wort // Wert für das Feld "englisches_Wort"
+            ]);
 
-        // Setzt eine Erfolgsnachricht, die auf der Seite angezeigt wird
-        $message = "Vokabel erfolgreich hinzugefügt!";
-        $message_class = "alert-success"; // CSS-Klasse für Erfolg
+            // Erfolgsnachricht, die bei erfolgreichem Hinzufügen der Vokabel gesetzt wird
+            $message = "Vokabel erfolgreich hinzugefügt!";
+        } catch (PDOException $e) {
+            // Fehlernachricht, falls ein Problem bei der Datenbankabfrage auftritt
+            $message = "Fehler beim Hinzufügen der Vokabel: " . $e->getMessage();
+        }
     } else {
-        // Setzt eine Fehlermeldung, wenn die Felder nicht ausgefüllt wurden
-        $message = "Bitte beide Felder ausfüllen!";
-        $message_class = "alert-danger"; // CSS-Klasse für Fehler
+        // Warnmeldung, falls eines der Eingabefelder leer ist
+        $message = "Bitte füllen Sie beide Felder aus.";
     }
 }
 ?>
@@ -50,27 +55,20 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vokabel Hinzufügen</title>
-    <!-- Bootstrap für allgemeines Styling einbinden -->
+    <!-- Einbindung von Bootstrap für ein einfaches und ansprechendes Styling -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Eigene CSS-Datei für individuelles Styling -->
+    <!-- Einbindung der eigenen CSS-Datei für individuelles Styling -->
     <link rel="stylesheet" href="vokabel-hinzufuegen.css">
 </head>
 <body>
 
+<!-- Hauptcontainer für das Formular -->
 <div class="container">
     <div class="form-container">
         <!-- Überschrift der Seite -->
         <h2>Neue Vokabel hinzufügen</h2>
 
-        <!-- Zeigt eine Nachricht an, wenn sie gesetzt wurde (Erfolg oder Fehler) -->
-        <?php if (isset($message)): ?>
-            <div class="alert <?php echo $message_class; ?>">
-                <!-- Dynamisch generierter Nachrichtentext -->
-                <?php echo $message; ?>
-            </div>
-        <?php endif; ?>
-
-        <!-- Formular zum Hinzufügen einer neuen Vokabel -->
+        <!-- Formular für die Benutzereingaben -->
         <form method="POST" action="vokabel-hinzufuegen.php">
             <!-- Eingabefeld für das deutsche Wort -->
             <div class="mb-3">
@@ -84,9 +82,17 @@ if (isset($_POST['submit'])) {
                 <input type="text" class="form-control" id="englisches_wort" name="englisches_wort" required>
             </div>
 
-            <!-- Buttons für die Aktionen (Hinzufügen und Zurück zur Startseite) -->
-            <div class="button-container">
-                <!-- Senden-Button für das Formular -->
+            <!-- Erfolgs- oder Fehlermeldung anzeigen, falls eine Nachricht gesetzt ist -->
+            <?php if (!empty($message)): ?>
+                <div class="alert alert-success mt-3">
+                    <!-- Dynamische Ausgabe der Nachricht -->
+                    <?php echo $message; ?>
+                </div>
+            <?php endif; ?>
+
+            <!-- Container für die Buttons -->
+            <div class="button-container mt-3">
+                <!-- Button zum Absenden des Formulars -->
                 <button type="submit" name="submit" class="btn btn-lila">Vokabel hinzufügen</button>
                 <!-- Link zurück zur Startseite -->
                 <a href="startseite.php" class="btn btn-secondary">Zurück zur Startseite</a>
@@ -97,9 +103,3 @@ if (isset($_POST['submit'])) {
 
 </body>
 </html>
-
-
-
-
-
-

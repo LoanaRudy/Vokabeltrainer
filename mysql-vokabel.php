@@ -15,6 +15,7 @@ try {
     // Die Verbindung erfolgt mit dem Host, der Datenbank, dem Benutzer und dem Passwort
     $mysql = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
 
+
     // Fehlerberichterstattung für PDO aktivieren
     // Dies stellt sicher, dass alle SQL-Fehler als Ausnahmen (Exceptions) geworfen werden
     $mysql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

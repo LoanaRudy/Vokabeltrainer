@@ -1,0 +1,108 @@
+/* Allgemeines Styling für den Hintergrund */
+body {
+    background-color: #f8f9fa;
+}
+
+/* Hauptcontainer Styling */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Tabellencontainer Styling */
+.table-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+/* Titel Styling */
+h1, h2 {
+    color: black;
+    text-align: center;
+}
+
+/* Tabelle Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #e9ecef;
+}
+
+/* Stil für das Mülleimer-Icon */
+.delete-icon {
+    color: gray; /* Standardfarbe */
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.delete-icon:hover {
+    color: #dc3545; /* Rot bei Hover */
+}
+
+/* Stil für das Stift-Icon */
+.edit-icon {
+    color: gray; /* Standardfarbe */
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.edit-icon:hover {
+    color: #C18ED3; /* Dunkleres Grau bei Hover */
+}
+
+/* Buttons Styling */
+.btn-lila {
+    background-color: #D8A7E4;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-lila:hover {
+    background-color: #C18ED3;
+}
+
+.btn-secondary {
+    background-color: #d3d3d3;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background-color: #b0b0b0;
+    color: black;
+}
+
+/* Styling für die Buttoncontainer */
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+

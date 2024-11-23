@@ -1,0 +1,87 @@
+/* Hintergrundfarbe der gesamten Seite */
+body {
+    background-color: #f8f9fa; /* Leichtes Grau für den Hintergrund */
+}
+
+/* Container für das Formular */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Formular-Container für die Eingabefelder */
+.form-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+/* Überschrift Styling */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Formular-Eingabefelder Styling */
+.form-control {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* Styling für Erfolgsmeldungen */
+.alert {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+/* Buttons Styling */
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #D8A7E4; /* Lila */
+    color: black;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #C18ED3; /* Dunkleres Lila beim Hover */
+    color: black; /* Textfarbe bleibt schwarz */
+}
+
+.btn-secondary {
+    background-color: #d3d3d3; /* Grau */
+    color: black;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #b0b0b0; /* Dunkleres Grau beim Hover */
+    color: black; /* Textfarbe bleibt schwarz */
+}
+
+/* Button-Container Styling */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px; /* Erhöhter Abstand zwischen den Buttons */
+    margin-top: 20px;
+}
+
+
+

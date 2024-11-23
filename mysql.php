@@ -11,6 +11,7 @@ try {
     // Es wird der Host, der Datenbankname, der Benutzername und das Passwort übergeben
     $mysql = new PDO("mysql:host=$host;dbname=$name", $user, $passwort);
 
+
     // Wenn die Verbindung erfolgreich ist, passiert hier nichts weiter
 } catch (PDOException $e) { // Falls ein Fehler auftritt
     // Fehlermeldung ausgeben, wenn die Verbindung fehlschlägt
